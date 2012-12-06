@@ -1,0 +1,16 @@
+<div class="top"></div>
+<%= button_to 'Click Me!', '/maps', {:class => "button"}%>
+
+
+<div id="map_canvas"></div>
+<script>
+    display_map(40.7142, -74.0064, 13);
+</script>
+
+
+
+<% @maps.each do |x| %>
+    <script>
+        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.building_type %>');
+    </script>
+<% end %>
