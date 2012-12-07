@@ -1,16 +1,14 @@
 <div class="top"></div>
-<%= button_to 'Click Me!', '/maps', {:class => "button"}%>
 
 
-<div id="map_canvas"></div>
-<script>
-    display_map(40.7142, -74.0064, 13);
-</script>
+<%= form_tag '/map', :remote => true do %>
+
+  <%= submit_tag 'press' %>
+  <% end %>
+
+<div id="selection"></div>
 
 
-
-<% @maps.each do |x| %>
-    <script>
-        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.building_type %>');
-    </script>
-<% end %>
+<%= button_tag 'Get Map Data' %>
+<div id="yoo">++++++</div>
+<div id='mapgraph'></div>

@@ -1,7 +1,8 @@
 Energy::Application.routes.draw do
 
   match '/map' => 'maps#new', :via => :get
-  match '/map' => 'maps#new', :via => :post
+  match '/map' => 'maps#create', :via => :post
+  post '/map/data' => 'maps#data'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

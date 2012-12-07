@@ -1,9 +1,14 @@
 class MapsController < ApplicationController
 
-
-
     def new
+    end
 
+    def data
+      maps = Map.all
+      render :json => maps
+    end
+
+    def create
 
 
       if Map.all.empty?
